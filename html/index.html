@@ -1,0 +1,27 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Weather Satellite Bot</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Weather Satellite Bot</h1>
+    <h2>Last images</h2>
+    <ul>
+        {% for image in images %}
+        <li><a href="{{ image }}">{{ image }}</a></li>
+        {% endfor %}
+    </ul>
+    <h2>Next passes</h2>
+    <ul>
+        {% for k in next_pass %}
+        <li>{{ k }} {{ next_pass[k] }}</li>
+        {% endfor %}
+    </ul>
+</body>
+
+</html>

@@ -1,0 +1,5 @@
+__pycache__
+img/*
+raw/*
+tle/*
+/run_telegram.sh
