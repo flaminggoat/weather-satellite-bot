@@ -8,7 +8,6 @@ import sys
 BOT_KEY = ''
 CHAT_ID = ''
 
-
 async def post_photo_to_telegram(image_queue):
     bot = telepot.Bot(BOT_KEY)
     while True:
@@ -17,8 +16,8 @@ async def post_photo_to_telegram(image_queue):
         with open(image_path + '.png', "rb") as photo:
             for i in range(3):
                 try:
-                    bot.sendMessage(CHAT_ID, image_path.split('/')[-1])
-                    bot.sendPhoto(CHAT_ID, photo)
+                    # bot.sendMessage(CHAT_ID, image_path.split('/')[-1])
+                    bot.sendPhoto(CHAT_ID, photo, caption=image_path.split('/')[-1])
                     break
                 except:
                     print("Failed to send telegram message on attempt: {}".format(i))
@@ -27,8 +26,6 @@ async def post_photo_to_telegram(image_queue):
 if __name__ == "__main__":
     BOT_KEY = sys.argv[1]
     CHAT_ID = sys.argv[2]
-
-    fish()
 
     loop = asyncio.get_event_loop()
 
